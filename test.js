@@ -1,9 +1,8 @@
 var app = require("./index.js");
 
-
-describe("Addition",function(){
+describe("Addition",function() {
   it("The function should add 2 numbers",function() {
     var value=app.AddNumber(5,6);
-    expect(value).toBe(11);
+    expect(value).toEqual(11);
   });
 });

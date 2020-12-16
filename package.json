@@ -1,19 +1,15 @@
 {
   "name": "laptop-store-project",
   "version": "1.0.0",
-  "description": "Laptop Store",
+  "description": "NodeJs - Laptop Store project",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "jest test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BhavyaSree/Laptop-Store-Project.git"
   },
-  "keywords": [
-    "laptop",
-    "Store"
-  ],
   "author": "Bhavya",
   "license": "ISC",
   "bugs": {
@@ -21,9 +17,6 @@
   },
   "homepage": "https://github.com/BhavyaSree/Laptop-Store-Project#readme",
   "dependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "jasmine-node": "^3.0.0",
     "jshint": "^2.12.0"
   }
 }
