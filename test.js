@@ -1,4 +1,5 @@
-var app=require("index.js");
+var app = require("./index.js");
+
 
 describe("Addition",function(){
   it("The function should add 2 numbers",function() {
@@ -6,4 +7,3 @@ describe("Addition",function(){
     expect(value).toBe(11);
   });
 });
-

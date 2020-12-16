@@ -1,0 +1,29 @@
+{
+  "name": "laptop-store-project",
+  "version": "1.0.0",
+  "description": "Laptop Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BhavyaSree/Laptop-Store-Project.git"
+  },
+  "keywords": [
+    "laptop",
+    "Store"
+  ],
+  "author": "Bhavya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BhavyaSree/Laptop-Store-Project/issues"
+  },
+  "homepage": "https://github.com/BhavyaSree/Laptop-Store-Project#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "jasmine-node": "^3.0.0",
+    "jshint": "^2.12.0"
+  }
+}
