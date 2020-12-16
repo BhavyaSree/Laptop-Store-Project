@@ -14,7 +14,6 @@ Host NodeJs application on Ubuntu Virtual Machine
 4. Restart the machine and verify
 
 ## Steps
-
 ### Installing VM
 1. Install virtual box
 2. Create a new ubuntu Virtual Machine
