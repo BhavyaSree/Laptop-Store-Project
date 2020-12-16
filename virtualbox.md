@@ -36,6 +36,9 @@ apt -y update && apt -y install nodejs npm git curl openssh-server
 nodejs -v
 npm -v
 git --version
+mkdir dev
+cd dev
+git clone https://github.com/BhavyaSree/Laptop-Store-Project.git
 systemctl status sshd.service
 ip addr
 ```
@@ -71,3 +74,5 @@ systemctl is-enabled my.service
 systemctl start my.service
 systemctl status my.service
 ```
+
+This application will be invoked automatically in VM as a service, whenever the VM is restarted.
