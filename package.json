@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BhavyaSree/Laptop-Store-Project#readme",
   "dependencies": {
+    "jest": "^26.6.3",
     "jshint": "^2.12.0"
   }
 }
