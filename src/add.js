@@ -1,0 +1,5 @@
+// just to write unit test case
+var exports = (module.exports = {});
+exports.AddNumber = function (a, b) {
+  return a + b;
+};
