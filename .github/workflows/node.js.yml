@@ -19,4 +19,6 @@ jobs:
     - run: |
         npm ci
         nohup npm start &
+        sleep 5
+        curl -v http://localhost:1337
         npm test
