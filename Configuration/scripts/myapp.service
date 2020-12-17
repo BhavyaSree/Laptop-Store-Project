@@ -1,0 +1,17 @@
+[Unit]
+Description=My Laptop Server Application
+ConditionPathExists=/app/src/index.js
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+WorkingDirectory=/app/src
+ExecStart=/usr/bin/env node index.js
+KillMode=process
+Type=simple
+TimeoutStartSec=5m
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

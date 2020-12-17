@@ -12,7 +12,7 @@ const http = require('http');
 const url = require('url');
 
 // read the file
-const json = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
+const json = fs.readFileSync(`${__dirname}/../data/data.json`, 'utf-8');
 // utf-8 is character encoding
 
 // parse json data
@@ -31,10 +31,10 @@ const server = http.createServer((req, res) => {
     //http header
     res.writeHead(200, { 'content-type':'text/html' });
     
-    fs.readFile(`${__dirname}/templates/template-overview.html`, 'utf-8', (err, data) => {
+    fs.readFile(`${__dirname}/../templates/template-overview.html`, 'utf-8', (err, data) => {
       let overviewOutput = data;
       
-      fs.readFile(`${__dirname}/templates/template-card.html`, 'utf-8', (err, data) => {
+      fs.readFile(`${__dirname}/../templates/template-card.html`, 'utf-8', (err, data) => {
         const cardsOutput = laptopData.map(el => replaceTemplate(data, el)).join('');
         overviewOutput = overviewOutput.replace('{%CARDS%}', cardsOutput);
         res.end(overviewOutput);
@@ -46,7 +46,7 @@ const server = http.createServer((req, res) => {
   else if (pathName === '/laptop' && id < laptopData.length) {
     res.writeHead(200, { 'content-type':'text/html' });
 
-    fs.readFile(`${__dirname}/templates/template-laptop.html`, 'utf-8', (err, data) => {
+    fs.readFile(`${__dirname}/../templates/template-laptop.html`, 'utf-8', (err, data) => {
       const laptop = laptopData[id];
       const output = replaceTemplate(data, laptop);
       res.end(output);
@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
 
   // IMAGES
   else if ((/\.(jpg|jpeg|png|gif)$/i).test(pathName)){
-      fs.readFile(`${__dirname}/data/images${pathName}`, (err, data) => {
+      fs.readFile(`${__dirname}/../data/images${pathName}`, (err, data) => {
         res.writeHead(200, { 'content-type':'image/jpg' });
         res.end(data);
       });
@@ -88,8 +88,8 @@ function replaceTemplate(originalHtml, laptop) {
 }
 
 // just to write unit test case
-var exports=module.exports={};
-exports.AddNumber=function(a,b)
-{
-return a+b;
-};
+//var exports=module.exports={};
+//exports.AddNumber=function(a,b)
+//{
+//return a+b;
+//};
