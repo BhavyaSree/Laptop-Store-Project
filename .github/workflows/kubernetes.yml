@@ -1,1 +1,7 @@
+name: deploy docker image on kubernetes cluster, using minikube in self-hosted runner
 
+on:
+  workflow_dispatch:
+
+jobs: 
+  runs-on: self-hosted
