@@ -29,4 +29,11 @@ jobs:
           sleep 5
           kubectl port-forward svc/laptop 1337
           sleep 5
-          open http://localhost:1337
+          curl http://localhost:1337
+  cleanup:
+    runs-on: self-hosted
+    needs: deploy
+    steps: 
+      - name: cleanup the deployment
+        run: kubectl delete deploy/laptop svc/laptop
+          
