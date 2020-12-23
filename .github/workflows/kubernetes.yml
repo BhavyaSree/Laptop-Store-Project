@@ -12,9 +12,12 @@ jobs:
   deploy:
     runs-on: self-hosted
     needs: main
+    timeout-minutes: 5
     steps:
       - name: deploy and expose the application
         run: |
+          killall kubectl || true
+          kubectl delete deploy/laptop svc/laptop
           kubectl create deployment laptop --image=bhavyabindela/laptop-store:v0.1 --port 1337
           sleep 30
           kubectl expose deploy/laptop --name laptop
