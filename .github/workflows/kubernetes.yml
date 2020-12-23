@@ -4,4 +4,28 @@ on:
   workflow_dispatch:
 
 jobs: 
-  runs-on: self-hosted
+  main:
+    runs-on: self-hosted
+    
+    steps:
+      - name: login to the system
+        run: ssh {{ $IP }}
+        
+  minikube:
+    runs-on: self-hosted
+    needs: main
+    steps:
+      - name: start minikube
+        run: minikube start
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: deploy and expose the application
+        run: |
+          kubectl create deployment laptop --image=bhavyabindela/laptop-store:v0.1 --port 1337
+          sleep 50
+          kubectl expose deploy/laptop --name laptop
+          sleep 100
+          kubectl port-forward svc/laptop 1337
+          sleep 50
+          open http://localhost:1337
