@@ -19,6 +19,7 @@ jobs:
         run: minikube start
   deploy:
     runs-on: self-hosted
+    needs: minikube
     steps:
       - name: deploy and expose the application
         run: |
