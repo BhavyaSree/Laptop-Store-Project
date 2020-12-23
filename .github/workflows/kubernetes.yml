@@ -9,7 +9,7 @@ jobs:
     
     steps:
       - name: login to the system
-        run: ssh {{ $IP }}
+        run: ssh ${{ IP }}
         
   minikube:
     runs-on: self-hosted
