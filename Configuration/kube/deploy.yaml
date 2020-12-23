@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: laptop
+  name: laptop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laptop
+  template:
+    metadata:
+      labels:
+        app: laptop
+    spec:
+      containers:
+        - image: bhavyabindela/laptop-store:v0.1
+          name: laptop-store
+          ports:
+            - containerPort: 1337
