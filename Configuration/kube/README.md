@@ -13,3 +13,5 @@ open http://localhost:1337
 ```
 kubectl delete deploy/laptop svc/laptop
 ```
+
+laptop.default.svc.cluster.local
