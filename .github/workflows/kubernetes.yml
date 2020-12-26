@@ -16,15 +16,14 @@ jobs:
     steps:
       - name: deploy and expose the application
         run: |
-          killall kubectl || true
-          kubectl delete deploy/laptop svc/laptop
           kubectl create deployment laptop --image=bhavyabindela/laptop-store:v0.1 --port 1337
-          sleep 30
+          sleep 20
           kubectl expose deploy/laptop --name laptop
           sleep 5
           nohup kubectl port-forward svc/laptop 1337 &
           sleep 5
           curl -v http://localhost:1337
+          killall kubectl
   cleanup:
     runs-on: self-hosted
     needs: deploy
