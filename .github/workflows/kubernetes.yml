@@ -22,7 +22,7 @@ jobs:
           sleep 30
           kubectl expose deploy/laptop --name laptop
           sleep 5
-          nohup kubectl port-forward svc/laptop 1337
+          nohup kubectl port-forward svc/laptop 1337 &
           sleep 5
           curl -v http://localhost:1337
   cleanup:
