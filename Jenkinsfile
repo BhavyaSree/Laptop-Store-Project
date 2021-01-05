@@ -1,18 +1,18 @@
 pipeline {
-  agent { docker 'node:14-alpine' }
-  stages {
-    stage('Build') {
-      agent { docker 'curlimages/curl' }
-        // sh 'npm install
-      steps {
-        sh 'nohup npm start &'
-        sh 'sleep 5'
-        sh 'curl -v http://localhost:1337'
+  agent any { 
+    stages {
+      stage('Build') {
+        steps {
+          // sh 'npm install
+          sh 'nohup npm start &'
+          sh 'sleep 5'
+          sh 'curl -v http://localhost:1337'
+        }
       }
-    }
-    stage('test') {
-      steps {
-      sh 'npm test'
+      stage('test') {
+        steps {
+        sh 'npm test'
+        }
       }
     }
   }
