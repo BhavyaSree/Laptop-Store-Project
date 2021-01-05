@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        // sh 'npm install'
         sh 'nohup npm start &'
         sh 'sleep 5'
         sh 'curl -v http://localhost:1337'
