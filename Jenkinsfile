@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       agent { docker 'curlimages/curl' }
       steps {
-        sh 'npm ci'
+        // sh 'npm ci'
         sh 'nohup npm start &'
         sh 'sleep 5'
         sh 'curl -v http://localhost:1337'
