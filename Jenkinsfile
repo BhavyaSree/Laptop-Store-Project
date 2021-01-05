@@ -11,9 +11,6 @@ pipeline {
       sh 'sleep 5'
       sh 'curl -v http://localhost:1337'
     }
-    stage('test') {
-      sh 'npm test'
-    }
   }
 }
 
