@@ -1,5 +1,5 @@
 pipeline {
-  agent any {
+  agent master {
     docker { 
       docker { image 'node:14-alpine' } 
     }
@@ -13,4 +13,3 @@ pipeline {
     }
   }
 }
-
