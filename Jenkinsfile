@@ -2,8 +2,8 @@ pipeline {
   agent { docker 'node:14-alpine' }
   stages {
     stage('Build') {
-      steps {
-        docker { image 'curlimages/curl' }
+      agent {
+        docker 'curlimages/curl' 
         // sh 'npm install'
       }
     }
